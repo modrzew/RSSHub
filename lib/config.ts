@@ -82,6 +82,9 @@ type ConfigEnvKeys =
     | 'BILIBILI_EXCLUDE_SUBTITLES'
     | 'BITBUCKET_USERNAME'
     | 'BITBUCKET_PASSWORD'
+    | 'BLIND_USERNAME'
+    | 'BLIND_PASSWORD'
+    | 'BLIND_COMPANY_URL'
     | 'BTBYR_HOST'
     | 'BTBYR_COOKIE'
     | 'BUPT_PORTAL_COOKIE'
@@ -349,6 +352,11 @@ export type Config = {
         username?: string;
         password?: string;
     };
+    blind: {
+        username?: string;
+        password?: string;
+        companyUrl?: string;
+    };
     btbyr: {
         host?: string;
         cookies?: string;
@@ -459,6 +467,10 @@ export type Config = {
     };
     keylol: {
         cookie?: string;
+    };
+    kickstarter: {
+        username?: string;
+        password?: string;
     };
     lastfm: {
         api_key?: string;
@@ -830,6 +842,11 @@ const calculateValue = () => {
         bitbucket: {
             username: envs.BITBUCKET_USERNAME,
             password: envs.BITBUCKET_PASSWORD,
+        },
+        blind: {
+            username: envs.BLIND_USERNAME,
+            password: envs.BLIND_PASSWORD,
+            companyUrl: envs.BLIND_COMPANY_URL,
         },
         btbyr: {
             host: envs.BTBYR_HOST,

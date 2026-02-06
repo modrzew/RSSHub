@@ -131,6 +131,8 @@ type ConfigEnvKeys =
     | 'JAVDB_SESSION'
     | 'JUMEILI_COOKIE'
     | 'KEYLOL_COOKIE'
+    | 'KICKSTARTER_USERNAME'
+    | 'KICKSTARTER_PASSWORD'
     | 'LASTFM_API_KEY'
     | 'SECURITY_KEY'
     | 'LOFTER_COOKIE'
@@ -939,6 +941,10 @@ const calculateValue = () => {
         },
         keylol: {
             cookie: envs.KEYLOL_COOKIE,
+        },
+        kickstarter: {
+            username: envs.KICKSTARTER_USERNAME,
+            password: envs.KICKSTARTER_PASSWORD,
         },
         lastfm: {
             api_key: envs.LASTFM_API_KEY,
